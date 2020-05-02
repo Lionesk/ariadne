@@ -15,7 +15,7 @@ from graphql import (
 )
 from graphql.execution import MiddlewareManager
 from graphql.validation import specified_rules, validate
-from graphql.validation.rules import RuleType
+from graphql.validation import ASTValidationRule
 
 from .extensions import ExtensionManager
 from .format_error import format_error
@@ -30,6 +30,7 @@ from .types import (
 )
 from .validation.introspection_disabled import IntrospectionDisabledRule
 
+RuleType = Type[ASTValidationRule]
 
 async def graphql(
     schema: GraphQLSchema,
